@@ -46,4 +46,12 @@ public class GameManager : MonoBehaviour
         PurseField.text = moneyBase + money;
         LifeField.text = lifeBase + life;
     }
+
+    public bool BuyTower(int cost)
+    {
+        if (money < cost) return false;
+        money -= cost;
+        UpdateOSD();
+        return true;
+    }
 }

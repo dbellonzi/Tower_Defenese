@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+  public Transform healthBar;
   public Path route;
   private Waypoint[] myPathThroughLife;
   public int coinWorth;
   public float health;
   public float speed = .25f;
+  public float maxHealth;
   private int index = 0;
   private Vector3 nextWaypoint;
   private bool stop = false;
@@ -17,6 +19,8 @@ public class Enemy : MonoBehaviour
   {
     myPathThroughLife = route.path;
     transform.position = myPathThroughLife[index].transform.position;
+    health = maxHealth;
+    Damage();
     Recalculate();
   }
 
@@ -47,7 +51,14 @@ public class Enemy : MonoBehaviour
   public bool Strike()
   {
     health -= 10;
-    Debug.Log($"You shot {gameObject.name}! It hurt so bad they only have {health} left!");
+    Damage();
     return health <= 0;
+  }
+
+  public void Damage()
+  {
+    var localScale = healthBar.localScale;
+    Vector3 newHealth = new Vector3((health / maxHealth), localScale.y, localScale.z);
+    healthBar.localScale = newHealth;
   }
 }
