@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1263780382466101727}
   - component: {fileID: 3700180030011183552}
   - component: {fileID: 6509237856282097387}
+  - component: {fileID: 825559345225071498}
+  - component: {fileID: 1402073956280496267}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -91,7 +93,36 @@ BoxCollider:
   m_GameObject: {fileID: 9108311076398624638}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &825559345225071498
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9108311076398624638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1402073956280496267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9108311076398624638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736a60580fbcf2b4797ef9323fc0cd8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toKill: []
+  name: WTF
+  strikeTime: 2
+  time: 0
